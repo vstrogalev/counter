@@ -1,7 +1,3 @@
-import { renderCounter } from "./components/counter/renderCounter.js";
+import {autoincrementCounter} from './data/data.js';
 
-const body = document.getElementById('root');
-
-const counter = renderCounter();
-
-body.appendChild(counter);
+autoincrementCounter();

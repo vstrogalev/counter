@@ -1,17 +1,23 @@
-import {renderHeader} from './header/renderHeader.js';
-import {renderButton} from './button/renderButton.js';
-import { renderValue } from './value/renderValue.js';
+import { renderHeader } from "./header/renderHeader.js";
+import { renderButton } from "./button/renderButton.js";
+import { renderValue } from "./value/renderValue.js";
 
-import { counterValue } from '../../data/data.js';
+export function renderCounter(counter) {
+  const prevCounter = document.querySelector('.counter');
+  if (prevCounter) {
+    prevCounter.remove();
+  }
 
-export function renderCounter() {
-  const counter = document.createElement('article');
-  counter.style.margin = '20px';
-  counter.style.border = '2px solid black';
-  counter.style.maxWidth = '400px';
-  counter.style.minHeight = '300px';
-  counter.style.display = 'flex';
-  counter.setAttribute('style', `
+  const counterHTMLElement = document.createElement("article");
+  counterHTMLElement.classList.add('counter');
+  counterHTMLElement.style.margin = "20px";
+  counterHTMLElement.style.border = "2px solid black";
+  counterHTMLElement.style.maxWidth = "400px";
+  counterHTMLElement.style.minHeight = "300px";
+  counterHTMLElement.style.display = "flex";
+  counterHTMLElement.setAttribute(
+    "style",
+    `
     margin: 40px;
     margin-left: 52px;
     border-style: solid;
@@ -22,13 +28,15 @@ export function renderCounter() {
     min-height: 365px;
     font-family: 'Arial', sans-serif;
     font-weight: 100;
-  `)
+  `
+  );
 
   const header = renderHeader();
-  const value = renderValue(counterValue);
+  const value = renderValue(counter);
   const button = renderButton();
 
-  counter.append(header, value, button);
+  counterHTMLElement.append(header, value, button);
 
-  return counter
+  const body = document.getElementById('root');
+  body.appendChild(counterHTMLElement);
 }
