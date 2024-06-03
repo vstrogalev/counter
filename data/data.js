@@ -1,1 +1,1 @@
-export let counterValue = 0;
+export let counterValue = 10;

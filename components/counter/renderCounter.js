@@ -13,13 +13,15 @@ export function renderCounter() {
   counter.style.display = 'flex';
   counter.setAttribute('style', `
     margin: 40px;
+    margin-left: 52px;
     border-style: solid;
     border-width: 5px;
     display: flex;
     flex-direction: column;
-    max-width: 536px;
-    min-height: 300px;
-    justify-content: space-around;
+    max-width: 541px;
+    min-height: 365px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 100;
   `)
 
   const header = renderHeader();

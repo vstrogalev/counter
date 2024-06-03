@@ -1,10 +1,16 @@
 export function renderValue(value) {
-  const valueRender = document.createElement('p');
+  const valueRender = document.createElement("p");
   valueRender.textContent = String(value);
-  valueRender.setAttribute('style', `
-    display: inline;
-    margin: 0 auto;
-  `)
+  valueRender.setAttribute(
+    "style",
+    `
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 40px;
+    margin-top: 27px;
+    margin-left: 238px;
+    `
+  );
 
   return valueRender;
 }
