@@ -1,3 +1,5 @@
-import {autoincrementCounter} from './data/data.js';
+import {setChangeDataListener} from './data/data.js'
+import {renderCounter} from './components/counter/renderCounter.js'
 
-autoincrementCounter();
+renderCounter();
+setChangeDataListener(renderCounter);

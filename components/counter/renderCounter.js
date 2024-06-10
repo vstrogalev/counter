@@ -2,7 +2,7 @@ import { renderHeader } from "./header/renderHeader.js";
 import { renderButton } from "./button/renderButton.js";
 import { renderValue } from "./value/renderValue.js";
 
-export function renderCounter(counter) {
+export function renderCounter() {
   const prevCounter = document.querySelector('.counter');
   if (prevCounter) {
     prevCounter.remove();
@@ -32,7 +32,7 @@ export function renderCounter(counter) {
   );
 
   const header = renderHeader();
-  const value = renderValue(counter);
+  const value = renderValue();
   const button = renderButton();
 
   counterHTMLElement.append(header, value, button);

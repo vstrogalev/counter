@@ -1,6 +1,8 @@
-export function renderValue(value) {
+import { data } from '../../../data/data.js';
+
+export function renderValue() {
   const valueRender = document.createElement("p");
-  valueRender.textContent = String(value);
+  valueRender.textContent = String(data.count);
   valueRender.setAttribute(
     "style",
     `

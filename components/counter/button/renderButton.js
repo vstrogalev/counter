@@ -1,3 +1,5 @@
+import { increment } from "../../../data/data.js";
+
 export function renderButton() {
   const button = document.createElement('button');
   button.textContent = '+';
@@ -10,6 +12,7 @@ export function renderButton() {
   font-size: 43px;
   cursor: pointer;
   `)
+  button.addEventListener('click', increment)
 
   return button;
 }

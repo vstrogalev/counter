@@ -1,12 +1,14 @@
-import { renderCounter } from "../components/counter/renderCounter.js";
-
 export const data = {
-  count: 0
+  count: 0,
 };
 
-// каждую секунду будем увеличивать data.count
-export const autoincrementCounter = setInterval(function () {
+let changeDataListener = () => {};
+export const setChangeDataListener = (cb) => {
+  changeDataListener = cb;
+}
+
+export const increment = () => {
   data.count++;
   // и затем перерисовывать весь счётчик
-  renderCounter(data.count);
-}, 1000);
+  changeDataListener();
+};
